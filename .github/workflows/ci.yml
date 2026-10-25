@@ -29,5 +29,7 @@ jobs:
           python -c "import fastapi, pydantic, pytest; print('fastapi', fastapi.__version__); print('pydantic', pydantic.__version__); print('pytest', pytest.__version__)"
 
       - name: Run tests
+        env:
+          PYTHONPATH: .
         run: |
           python -m pytest -q tests -ra
